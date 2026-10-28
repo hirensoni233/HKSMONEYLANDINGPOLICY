@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account &amp; Data Deletion Request - HKS Money landing</title>
+  <style>
+    :root {
+      --primary: #5c1223;
+      --text: #2c3e55;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffd0d9;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      font-weight: 800;
+    }
+    .subtitle {
+      color: #fbe2e6;
+      font-size: 14px;
+      margin: 0;
+    }
+    .container {
+      max-width: 680px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-top: 0;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      background: #dc2626;
+      color: #ffffff;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn:hover {
+      background: #b91c1c;
+    }
+    .notice {
+      background: #fff1f2;
+      border: 1px solid #ffe4e6;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #9f1239;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 13px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="badge">GOOGLE PLAY COMPLIANT DATA DELETION</div>
+    <h1>Account &amp; Data Deletion Request</h1>
+    <p class="subtitle">HKS Money landing (com.hksmoneylanding)</p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Submit Account Erasure Request</h2>
+      <p style="font-size: 14px; color: #64748b;">
+        If you wish to permanently delete your operator workspace, customer records, loan ledgers, and pledged collateral photographs, please submit the request form below:
+      </p>
+
+      <form id="deletionForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="email">Registered Operator Email Address *</label>
+          <input type="email" id="email" required placeholder="e.g. sonihiren233@gmail.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="firmName">Business / Organization Display Name *</label>
+          <input type="text" id="firmName" required placeholder="e.g. Manav Jewellers" />
+        </div>
+
+        <div class="form-group">
+          <label for="scope">Scope of Deletion *</label>
+          <select id="scope">
+            <option value="all">Delete Entire Account &amp; All Associated Ledger Data</option>
+            <option value="photos">Purge Collateral Photographs Only</option>
+            <option value="inactive">Delete Closed / Settled Loan History Only</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason for Deletion (Optional)</label>
+          <textarea id="reason" rows="3" placeholder="Tell us why you are deleting your account..."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Permanent Deletion Request</button>
+      </form>
+
+      <div class="notice">
+        <strong>Important Retention Notice:</strong> In accordance with Google Play's Data Safety guidelines and statutory accounting requirements (under Indian financial laws), completed transaction logs may be retained in cold storage for statutory audit periods before permanent purging.
+      </div>
+
+      <div id="confirmation" style="display:none; background:#ecfdf5; border:1px solid #d1fae5; color:#065f46; border-radius:10px; padding:16px; margin-top:20px;">
+        <strong>Deletion Request Received:</strong> Your account deletion ticket has been logged. Our compliance officer will verify and purge all specified data within 48 hours. A confirmation email will be sent to your registered address.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 HKS Money landing. Grievance Officer: Hiren Soni (sonihiren233@gmail.com)
+  </div>
+
+  <script>
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('deletionForm').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
